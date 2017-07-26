@@ -47,4 +47,37 @@ class Welcome extends CI_Controller {
 		echo json_encode($validator);
 	}
 
+	public function fetchPosisiData()
+	{
+		$result = array('data'=>array());
+
+		$data = $this->Model_Posisi->fetchPosisiData();
+		$no=1;
+		foreach ($data as $key => $value) {
+			$nomor = '<center><small>'.$no.'</small></center>';
+			$nama_posisi = '<small>'.$value['nama_posisi'].'</small>';
+			$button = '<center>
+									<div class="dropdown">
+  									<button class="btn btn-default btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									    Action
+									    <span class="caret"></span>
+									  </button>
+									  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+									    <li><a href="#">Edit</a></li>
+									    <li><a href="#">Delete</a></li>
+									  </ul>
+									</div>
+								</center>';
+			$result['data'][$key] = array(
+				$nomor,
+				$nama_posisi,
+				$button
+			);
+
+			$no++;
+		}
+
+		echo json_encode($result);
+	}
+
 }

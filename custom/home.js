@@ -1,7 +1,9 @@
 var managePosisiTable;
 
 $(document).ready(function(){
-	managePosisiTable = $("#managePosisiTable").DataTable();
+	managePosisiTable = $("#managePosisiTable").DataTable({
+		'ajax': 'index.php/welcome/fetchPosisiData'
+	});
 });
 
 function addPosisi(){
@@ -25,7 +27,8 @@ function addPosisi(){
 				if(response.success == true){
 					$(".messages").html('<div class="alert alert-success alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!</strong>'+response.messages+'</div>');
 					$("#myModal").modal('hide');
-					// managePosisiTable.ajax.reload(null, false);
+					managePosisiTable.ajax.reload();
+
 				}else{
 					if(response.messages instanceof Object){
 						$.each(response.messages, function(index, value){

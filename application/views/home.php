@@ -7,8 +7,8 @@
     <title></title>
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="assets/datatables/jquery.dataTables.min.css" rel="stylesheet">
-    <!-- <link href="assets/datatables/dataTables.bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="assets/datatables/jquery.dataTables.min.css" rel="stylesheet"> -->
+    <link href="assets/datatables/dataTables.bootstrap.css" rel="stylesheet"> 
   </head>
   <body>
     <div class="container">
@@ -22,7 +22,9 @@
       <table class="table table-bordered table-condensed" id="managePosisiTable">
         <thead>
           <tr>
+            <th width="20"><small></small></th>
             <th><small>Nama Posisi</small></th>
+            <th width="90"><small></small></th>
           </tr>
         </thead>
       </table>
@@ -53,6 +55,7 @@
     <script src="assets/jquery/jquery-3.2.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/datatables/dataTables.bootstrap.js"></script>
     <script src="custom/home.js"></script>
   </body>
 </html>

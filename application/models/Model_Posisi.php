@@ -16,6 +16,12 @@ class Model_Posisi extends CI_Model {
 		}else{
 			return false;
 		}
+	}
+
+	public function fetchPosisiData()
+	{	
+		$this->db->order_by('id','DESC');
+		return $this->db->get('posisi')->result_array();
 	}	
 
 }
